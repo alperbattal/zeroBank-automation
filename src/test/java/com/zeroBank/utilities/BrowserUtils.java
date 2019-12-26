@@ -1,5 +1,6 @@
 package com.zeroBank.utilities;
 
+import com.zeroBank.pages.AccountActivity;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
@@ -13,6 +14,8 @@ import java.util.List;
 import java.util.function.Function;
 
 public class BrowserUtils {
+
+    AccountActivity accountActivity  = new AccountActivity();
 
     //It will be used to pause our test execution
     //just provide number of seconds as a parameter
@@ -175,5 +178,13 @@ public class BrowserUtils {
         }
         return listOfStrings;
     }
+
+
+    public List<String> getColumnNames(){
+        return BrowserUtils.getListOfString(accountActivity.columnNames);
+    }
+
+
+
 
 }

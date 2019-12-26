@@ -14,7 +14,6 @@ public class accountSummaryStepDefinitions {
 
     @Given("user verifies that the title is {string}")
     public void user_verifies_that_the_title_is(String title) {
-
         Assert.assertEquals( Driver.get().getTitle(), title);
     }
 
