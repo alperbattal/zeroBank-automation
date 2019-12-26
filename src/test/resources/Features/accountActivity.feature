@@ -22,7 +22,7 @@ Feature: Account Activity
       | Brokerage   |
 
   Scenario: verify column names
-    Given user verifies that the column names are displayed
+    Given user verifies that the column names are displayed on Acc Act Page
       | Date        |
       | Description |
       | Deposit     |

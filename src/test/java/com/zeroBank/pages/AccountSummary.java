@@ -38,10 +38,10 @@ public class AccountSummary extends BasePage{
         return titleElement.getText();
     }
 
+
     public List<String> getColumnNames(){
         return BrowserUtils.getListOfString(columnNames);
     }
-
 
 
 

@@ -4,9 +4,6 @@ import com.zeroBank.pages.AccountActivity;
 import com.zeroBank.utilities.BrowserUtils;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class accountActivityStepDefinitions {
@@ -20,10 +17,14 @@ public class accountActivityStepDefinitions {
 
     @Then("user verifies that the dropdown has following options")
     public void user_verifies_that_the_dropdown_has_following_options(List<String> dataTable) {
-        //accountActivity.getAvailableOptions();
-        System.out.println(accountActivity.getAvailableOptions());
-        List<String> list = new ArrayList<>();
-        //list.addAll(Arrays.asList(accountActivity.getAvailableOptions()));
-        Assert.assertEquals(accountActivity.getAvailableOptions(),dataTable);
+        Assert.assertEquals(dataTable, accountActivity.getAvailableOptions());
     }
+
+    @Given("user verifies that the column names are displayed on Acc Act Page")
+    public void user_verifies_that_the_column_names_are_displayed_on_Acc_Act_Page(List<String> dataTable) {
+        System.out.println(accountActivity.getColumnNames());
+        Assert.assertEquals(accountActivity.getColumnNames(),dataTable);
+    }
+
+
 }

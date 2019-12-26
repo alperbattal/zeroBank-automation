@@ -10,11 +10,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
-public class AccountActivity {
+public class AccountActivity extends BasePage{
 
 
     /*
@@ -34,19 +33,16 @@ public class AccountActivity {
     public String setDropdown(){
         return select.getFirstSelectedOption().getText();
     }
+
     public List<String> getColumnNames(){
         return BrowserUtils.getListOfString(columnNames);
     }
 
     public List<String> getAvailableOptions(){
-        List<WebElement> list = Driver.get().findElements(By.id("aa_accountId"));
-       /* List<String> actualList = new ArrayList<>();
-        actualList = BrowserUtils.getListOfString(list);
-
-        */
+        List<WebElement> list = Driver.get().findElements(By.tagName("option"));
         return BrowserUtils.getListOfString(list);
-
     }
+
 
 
 
