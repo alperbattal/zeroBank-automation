@@ -17,6 +17,7 @@ public class accountActivityStepDefinitions {
 
     @Then("user verifies that the dropdown has following options")
     public void user_verifies_that_the_dropdown_has_following_options(List<String> dataTable) {
+        System.out.println(accountActivity.getAvailableOptions());
         Assert.assertEquals(dataTable, accountActivity.getAvailableOptions());
     }
 
@@ -25,6 +26,4 @@ public class accountActivityStepDefinitions {
         System.out.println(accountActivity.getColumnNames());
         Assert.assertEquals(accountActivity.getColumnNames(),dataTable);
     }
-
-
 }
