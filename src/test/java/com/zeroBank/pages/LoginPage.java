@@ -1,7 +1,6 @@
 package com.zeroBank.pages;
 
 import com.zeroBank.utilities.BrowserUtils;
-import com.zeroBank.utilities.ConfigurationReader;
 import com.zeroBank.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

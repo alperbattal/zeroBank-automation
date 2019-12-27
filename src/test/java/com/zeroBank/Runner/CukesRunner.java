@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/Features", //path to features
         glue = "com/zeroBank/stepDefinitions",//path to step definitions
-        dryRun = false,
-        tags = "",
+        dryRun =false,
+        tags = "@pay_bills",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json"
         }
