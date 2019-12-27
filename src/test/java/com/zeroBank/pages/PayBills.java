@@ -92,30 +92,9 @@ public class PayBills {
 
     JavascriptExecutor js = (JavascriptExecutor) Driver.get();
 
-    public String getAlert() {
-
-        BrowserUtils.waitForVisibility(amount, 3);
-        Boolean is_valid_amount = (Boolean) js.executeScript("return arguments[0].checkValidity();", amount);
-        String mes = (String) js.executeScript("return arguments[0].validationMessage;", amount);
-        System.out.println(mes);
-        return mes;
-
-
-        //Boolean is_valid_date = (Boolean) js.executeScript("return arguments[0].checkValidity();", dateInput);
-        //String message = (String) js.executeScript("return arguments[0].validationMessage;",amount);
-        /*String message="";
-        if (is_valid_amount == true){
-            message = (String) js.executeScript("return arguments[0].validationMessage;", amount);
-        }else if (is_valid_date == true){
-            message = (String) js.executeScript("return arguments[0].validationMessage;",dateInput);
-        }
-         */
-    }
-
     public String getAlertAmount() {
         BrowserUtils.waitForVisibility(amount, 3);
         return (String) js.executeScript("return arguments[0].validationMessage;", amount);
-
     }
 
     public String getAlertDate() {
