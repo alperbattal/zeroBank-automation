@@ -185,6 +185,11 @@ public class BrowserUtils {
     }
 
 
+    public static void switchTabs(String tab) {
+        BrowserUtils.waitForClickablility(Driver.get().findElement(By.linkText(tab)), 10);
+        Driver.get().findElement(By.linkText(tab)).click();
+        System.out.println("Tab : "+tab+" tab");
+    }
 
 
 }

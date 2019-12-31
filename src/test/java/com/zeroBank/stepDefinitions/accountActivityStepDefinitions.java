@@ -26,5 +26,6 @@ public class accountActivityStepDefinitions {
         System.out.println(accountActivity.getColumnNames());
         Assert.assertEquals(accountActivity.getColumnNames(),dataTable);
     }
+
 }
 

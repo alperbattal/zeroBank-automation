@@ -42,5 +42,7 @@ public class loginStepDefinitions {
     @Given("user navigates to the {string} page")
     public void user_navigates_to_the_page(String module) {
         loginPage.navigateTo(module);
+        System.out.println("Page : "+ module);
     }
+
 }

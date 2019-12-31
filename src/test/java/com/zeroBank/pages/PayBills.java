@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class PayBills {
@@ -40,6 +42,24 @@ public class PayBills {
 
     @FindBy(id = "pay_saved_payees")
     public WebElement submit;
+
+    @FindBy(id = "np_new_payee_name")
+    public WebElement newPayeeName;
+
+    @FindBy(id = "np_new_payee_address")
+    public WebElement newPayeeAddress;
+
+    @FindBy(id = "np_new_payee_account")
+    public WebElement newPayeeAccount;
+
+    @FindBy(id = "np_new_payee_details")
+    public WebElement newPayeeDetails;
+
+    @FindBy(id = "add_new_payee")
+    public WebElement addNewPayeeButton;
+
+    @FindBy(id = "alert_content")
+    public WebElement newPayeeAddedMessage;
 
 
     Select select;
@@ -101,6 +121,50 @@ public class PayBills {
         BrowserUtils.waitForVisibility(dateInput, 3);
         return (String) js.executeScript("return arguments[0].validationMessage;", dateInput);
     }
+
+    /*
+    public void user_adds_new_car_information(List<Map<String, String>> dataTable) {
+        //as many rows of data you have, it will create cars
+        //wait
+        createCarPage.waitUntilLoaderMaskDisappear();
+        System.out.println(dataTable);
+        int row = 1;
+        for (Map<String, String> map : dataTable) {
+            createCarPage.licensePlateElement.sendKeys(map.get("License Plate"));
+            createCarPage.driverElement.sendKeys(map.get("Driver"));
+            createCarPage.locationElement.sendKeys(map.get("Location"));
+            createCarPage.modelYearElement.sendKeys(map.get("Model Year"));
+            createCarPage.colorElement.sendKeys(map.get("Color"));
+            BrowserUtils.wait(2);//for demo
+
+            if (row == dataTable.size()) {
+                //if it's a last row - click save and close
+                createCarPage.clickSaveAndClose();
+            } else {
+                //if it's not the last row - click save and add new
+                createCarPage.clickSaveAndAddNew();
+            }
+
+            BrowserUtils.wait(2);//for demo
+            row++;
+        }
+    }
+     */
+
+    public void addNewPayee(List<Map<String, String>> dataTable) {
+        System.out.println(dataTable);
+        int row = 1;
+
+        for (Map<String,String > map : dataTable){
+            BrowserUtils.waitForVisibility(newPayeeName,10);
+            newPayeeName.sendKeys(map.get("Payee Name"));
+            newPayeeAddress.sendKeys(map.get("Payee Address"));
+            newPayeeAccount.sendKeys(map.get("Account"));
+            newPayeeDetails.sendKeys(map.get("Payee Details"));
+            addNewPayeeButton.click();
+        }
+    }
+
 }
 
 
