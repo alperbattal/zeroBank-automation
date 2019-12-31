@@ -15,13 +15,10 @@ public class AccountSummary extends BasePage{
     /*
     @FindBy(xpath = "//h2[@class='board-header'][1]")
     public WebElement cashAccountsTitle;
-
     @FindBy(xpath = "//h2[@class='board-header'][2]")
     public WebElement investmentAccountsTitle;
-
     @FindBy(xpath = "//h2[@class='board-header'][3]")
     public WebElement creditAccountsTitle;
-
     @FindBy(xpath = "//h2[@class='board-header'][4]")
     public WebElement loanAccountsTitle;
      */
@@ -42,10 +39,6 @@ public class AccountSummary extends BasePage{
     public List<String> getColumnNames(){
         return BrowserUtils.getListOfString(columnNames);
     }
-
-
-
-
 
 
 

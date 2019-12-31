@@ -27,3 +27,4 @@ public class accountActivityStepDefinitions {
         Assert.assertEquals(accountActivity.getColumnNames(),dataTable);
     }
 }
+

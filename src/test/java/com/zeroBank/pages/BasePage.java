@@ -45,7 +45,6 @@ public class BasePage {
 
     public BasePage(){ PageFactory.initElements(Driver.get(), this); }
 
-
     public void navigateTo(String module){
         WebDriverWait wait = new WebDriverWait(Driver.get(),10);
         switch ( module ){
@@ -85,7 +84,6 @@ public class BasePage {
         }
 
     }
-
 
 }
 
