@@ -2,6 +2,7 @@ package com.zeroBank.stepDefinitions;
 
 import com.zeroBank.pages.AccountSummary;
 import com.zeroBank.pages.LoginPage;
+import com.zeroBank.utilities.BrowserUtils;
 import com.zeroBank.utilities.ConfigurationReader;
 import com.zeroBank.utilities.Driver;
 import io.cucumber.java.en.*;
@@ -14,6 +15,7 @@ public class loginStepDefinitions {
     public void user_is_on_the_login_page() {
         Driver.get().get(ConfigurationReader.getProperty("url"));
         System.out.println("I am on the login page");
+        BrowserUtils.wait(2);
     }
 
     @Then("user is able to login with valid credentials")
@@ -37,7 +39,6 @@ public class loginStepDefinitions {
         System.out.println(AccountSummary.getTitle(number));
 
     }
-
 
     @Given("user navigates to the {string} page")
     public void user_navigates_to_the_page(String module) {

@@ -24,7 +24,7 @@ public class accountActivityStepDefinitions {
     @Given("user verifies that the column names are displayed on Acc Act Page")
     public void user_verifies_that_the_column_names_are_displayed_on_Acc_Act_Page(List<String> dataTable) {
         System.out.println(accountActivity.getColumnNames());
-        Assert.assertEquals(accountActivity.getColumnNames(),dataTable);
+        Assert.assertEquals(dataTable,accountActivity.getColumnNames());
     }
 
 }

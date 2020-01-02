@@ -14,10 +14,10 @@ Feature: Account Summary
     And user verifies that the number "3" title is "Credit Accounts"
     Then user verifies that the number "4" title is "Loan Accounts"
 
-    Scenario: verify column names
-      Given user verifies that the column names are displayed
-      |Account|
-      |Credit Card|
-      |Balance|
+  Scenario: verify column names
+    Given user verifies that the column names are displayed
+      | Account     |
+      | Credit Card |
+      | Balance     |
 
 

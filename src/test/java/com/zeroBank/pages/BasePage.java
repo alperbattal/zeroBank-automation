@@ -42,7 +42,6 @@ public class BasePage {
     @FindBy(xpath = "//*[@class='dropdown'][2]")
     public WebElement userprofile;
 
-
     public BasePage(){ PageFactory.initElements(Driver.get(), this); }
 
     public void navigateTo(String module){

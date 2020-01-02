@@ -61,6 +61,12 @@ public class PayBills {
     @FindBy(id = "alert_content")
     public WebElement newPayeeAddedMessage;
 
+    @FindBy(id = "pc_currency")
+    public WebElement currency;
+
+    @FindBy(id = "purchase_cash")
+    public WebElement foreignCurrencyCashButton;
+
 
     Select select;
 
@@ -163,6 +169,12 @@ public class PayBills {
             newPayeeDetails.sendKeys(map.get("Payee Details"));
             addNewPayeeButton.click();
         }
+    }
+
+    public List<String> getCurrencyOptions(){
+        BrowserUtils.waitForClickablility(currency,10);
+        select = new Select(currency);
+        return BrowserUtils.getListOfString(select.getOptions().subList(1,select.getOptions().size()));
     }
 
 }

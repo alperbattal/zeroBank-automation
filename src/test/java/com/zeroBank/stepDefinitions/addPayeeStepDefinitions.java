@@ -14,7 +14,6 @@ public class addPayeeStepDefinitions {
     @Given("creates new payee using following information")
     public void creates_new_payee_using_following_information(List<Map<String,String>> dataTable) {
         payBills.addNewPayee(dataTable);
-
     }
 
     @Then("message {string} should be displayed.")

@@ -25,14 +25,15 @@ public class Hook {
             System.out.println("Test failed!");
             byte[] screenshot = ((TakesScreenshot)Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
+            Driver.close();
+            System.out.println("Driver is closed-- here*");
         }else{
             System.out.println("Cleanup!");
             System.out.println("Test completed!");
         }
-
-
         System.out.println("##############################");
         //after every test, we gonna close browser
         Driver.close();
+        System.out.println("Driver is closed");
     }
 }

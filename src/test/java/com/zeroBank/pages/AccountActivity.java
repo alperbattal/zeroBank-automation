@@ -53,7 +53,6 @@ public class AccountActivity extends BasePage {
     @FindBy(xpath = "//div[@id='filtered_transactions_for_account']/table/tbody/tr/td[2]")
     public List<WebElement> descriptionsRow;
 
-
     @FindBy(xpath = "//div[@id='filtered_transactions_for_account']/table/tbody/tr/td[3]")
     public List<WebElement> depositRow;
 
@@ -64,8 +63,6 @@ public class AccountActivity extends BasePage {
     public WebElement type;
 
 
-
-
     public String setDropdown() {
         BrowserUtils.waitForClickablility(dropdown, 10);
         select = new Select(dropdown);
@@ -73,6 +70,7 @@ public class AccountActivity extends BasePage {
     }
 
     public List<String> getColumnNames() {
+        BrowserUtils.wait(3);
         return BrowserUtils.getListOfString(columnNames);
     }
 

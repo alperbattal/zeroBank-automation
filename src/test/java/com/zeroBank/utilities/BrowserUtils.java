@@ -180,10 +180,11 @@ public class BrowserUtils {
     }
 
 
-    public List<String> getColumnNames(){
+    /*public List<String> getColumnNames(){
         return BrowserUtils.getListOfString(accountActivity.columnNames);
     }
 
+     */
 
     public static void switchTabs(String tab) {
         BrowserUtils.waitForClickablility(Driver.get().findElement(By.linkText(tab)), 10);

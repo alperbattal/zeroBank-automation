@@ -23,7 +23,6 @@ public class accountSummaryStepDefinitions {
         System.out.println(dataTable);
         BrowserUtils.wait(3);
         Assert.assertEquals(dataTable, accountSummary.getColumnNames());
-
     }
 
 }

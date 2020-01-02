@@ -40,17 +40,16 @@ public class LoginPage extends BasePage{
 
     public void login(String username, String password){
 
-        BrowserUtils.waitForPageToLoad(10);
-        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
+        BrowserUtils.waitForPageToLoad(15);
         BrowserUtils.waitForClickablility(signInButton,10);
         signInButton.click();
 
         //username input
-        wait.until(ExpectedConditions.visibilityOf(userNameInput));
+        BrowserUtils.waitForVisibility(userNameInput,10);
         userNameInput.sendKeys(username);
 
         //password input
-        wait.until(ExpectedConditions.visibilityOf(passwordInput));
+        BrowserUtils.waitForVisibility(passwordInput,10);
         passwordInput.sendKeys(password, Keys.ENTER);
 
     }
